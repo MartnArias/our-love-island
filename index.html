@@ -41,10 +41,7 @@
           sans-serif;
         overflow: hidden;
         color: #3a0030;
-        background-image: url("background/background.jpg");
-        background-size: cover;
-        background-position: center 60%;
-        background-attachment: fixed;
+        background: linear-gradient(135deg, var(--bg1), var(--bg2) 55%, var(--bg3));
       }
 
       /* dreamy moving background blobs */
@@ -853,7 +850,7 @@
       }
 
       function initializeCarousel() {
-        const imageFolder = "carousal";
+        const imageFolder = "images";
         const imageNames = [
           "78831309463__7F94C7D5-E04B-4FD9-A036-3AC8F39011A5.jpg",
           "78892369127__F1BE78BA-F281-4426-B571-18130002F3FA.jpg",
@@ -899,7 +896,7 @@
           "IMG_6867.jpg",
           "IMG_6874.jpg",
           "IMG_6945.jpg",
-          "IMG_7076 2.jpg",
+          "IMG_7076-2.jpg",
           "IMG_7078.jpg",
           "IMG_7081.jpg",
           "IMG_7859.jpg",
@@ -922,7 +919,7 @@
             const item = document.createElement("div");
             item.className = "carousel-item";
             const imgEl = document.createElement("img");
-            imgEl.src = `carousal/${img}`;
+            imgEl.src = `${imageFolder}/${img}`;
             imgEl.alt = img;
             item.appendChild(imgEl);
             item.dataset.rowIndex = i; // Track which row this item belongs to
@@ -935,7 +932,7 @@
             const item = document.createElement("div");
             item.className = "carousel-item";
             const imgEl = document.createElement("img");
-            imgEl.src = `carousal/${img}`;
+            imgEl.src = `${imageFolder}/${img}`;
             imgEl.alt = img;
             item.appendChild(imgEl);
             item.dataset.rowIndex = i;
@@ -961,7 +958,7 @@
               const rowImages = rows[rowIndex];
               const randomImg =
                 rowImages[Math.floor(Math.random() * rowImages.length)];
-              img.src = `carousal/${randomImg}`;
+              img.src = `${imageFolder}/${randomImg}`;
             }, 300);
 
             // Remove flip class after animation
